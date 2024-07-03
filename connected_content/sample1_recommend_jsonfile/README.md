@@ -7,6 +7,8 @@
 以下の手順で、試すことが可能です。
 
 # (1) catalog.csvを、お使いのBrazeの環境に取り込む
+Brazeの環境に取り込む際に、"Recommend1"という名前で保存ください。
+(2)のliquidでは、"Recommend1"という名前で、カタログを参照しています。
 
 # (2) メッセージの中で、以下のliquidを書く
 The recommended Information:
