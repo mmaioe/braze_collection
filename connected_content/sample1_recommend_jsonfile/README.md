@@ -1,7 +1,14 @@
 # sample1_recommend_jsonfile
 
+このサンプルでは、以下のBrazeの機能を試すことができます。
+1. Catalog
+2. liquid
 
-# liquid例
+以下の手順で、試すことが可能です。
+
+# (1) catalog.csvを、お使いのBrazeの環境に取り込む
+
+# (2) メッセージの中で、以下のliquidを書く
 The recommended Information:
 
 {% connected_content 
