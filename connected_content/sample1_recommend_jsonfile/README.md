@@ -3,6 +3,9 @@
 このサンプルでは、以下のBrazeの機能を試すことができます。
 1. Catalog
 2. liquid
+3. Connected Content
+   gituhb上にHostingしたJSONファイルを呼び出すだけの例になります。
+   APIサーバーの開発をした例ではありません。
 
 以下の手順で、試すことが可能です。
 
