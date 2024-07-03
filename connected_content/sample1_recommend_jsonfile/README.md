@@ -14,7 +14,7 @@ Brazeの環境に取り込む際に、"Recommend1"という名前で保存くだ
 The recommended Information:
 
 {% connected_content 
-https://raw.githubusercontent.com/mmaioe/braze_connected_content_test/main/recommended_items.json 
+https://raw.githubusercontent.com/mmaioe/braze_collection/main/connected_content/sample1_recommend_jsonfile/recommended_items.json
 :content_type application/json 
 :save result
  %}
