@@ -28,7 +28,7 @@ Hi, the recommended item is {{result}}
 
 Hi, the recommended item is {{result.recommended_items[0]}}!!!!
 
-{% catalog_items Recommend1 {{result.recommended_items[0]}}, {{result.recommended_items[1]}}  %}
+{% catalog_items Recommend1 {{result.recommended_items[0]}} {{result.recommended_items[1]}}  %}
 
 {% for item in items %}
 {{ item.product_title}}
