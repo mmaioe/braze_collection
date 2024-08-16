@@ -4,6 +4,10 @@
 
 This message is shown in the right bottom corner with some avatar icon along with some simple message.
 
+When clicking a text "Close", this IAM message is closed.
+
+このメッセージは、ホームページの右下に表示されるようになっています。鳥のアバターアイコンと共にメッセージを表示しています。閉じるというテキストを押すと、IAMが閉じます。
+
 ![image](https://raw.githubusercontent.com/mmaioe/braze_collection/main/in_app_message/cute_avatar/sample_IAM.png)
 
 
