@@ -1,5 +1,45 @@
 # sample1_recommend_jsonfile
 
+## English
+
+In this asset, you can try the following Braze's functionalities:
+1. Catalog
+2. liquid
+3. Connected Content
+
+   This assets simply call JSON file hosting in this gihub repository.
+
+   This asset is not an example which is using API Server (Connected content API).
+
+You can try this asset by following the below steps:
+
+# (1) upload catalog.csv into your Braze environment
+When uploading catalog.csv, save that data as "Recommend1".
+the liquid of (2) step is referring this csv data as "Recommend1". So, name it as "Recommend1".
+
+# (2) write some liquid like the following in the message for using Connected content.
+The recommended Information:
+
+{% connected_content
+https://raw.githubusercontent.com/mmaioe/braze_collection/main/connected_content/sample1_recommend_jsonfile/recommended_items.json
+:content_type application/json
+:save result
+ %}
+
+Hi, the recommended item is {{result}}
+
+Hi, the recommended item is {{result.recommended_items[0]}}!!!!
+
+{% catalog_items Recommend1 {{result.recommended_items[0]}}, {{result.recommended_items[1]}}  %}
+
+{% for item in items %}
+{{ item.product_title}}
+{% endfor %}
+
+
+
+## Japanese 
+
 このサンプルでは、以下のBrazeの機能を試すことができます。
 1. Catalog
 2. liquid
