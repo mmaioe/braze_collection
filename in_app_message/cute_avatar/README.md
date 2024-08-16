@@ -1,8 +1,13 @@
 # Cute Avatar IAM(In App Message)
 
-## English
+## How it looks like (どのようなメッセージか？)
 
-In this IAM message, we show some avatar icon along with some simple message.
+This message is shown in the right bottom corner with some avatar icon along with some simple message.
+
+![image](https://raw.githubusercontent.com/mmaioe/braze_collection/main/in_app_message/cute_avatar/sample_IAM.png)
+
+
+## English
 
 In this asset, you can try the following Braze's functionalities:
 
@@ -18,9 +23,13 @@ I tried this one only for Web. So, not sure how it works for mobile app.
 
 ## Japanese
 
-## How it looks like
+このサンプルでは、以下のBrazeの機能を試すことができます。
 
-![image](https://raw.githubusercontent.com/mmaioe/braze_collection/main/in_app_message/cute_avatar/sample_IAM.png)
+1. [Custom HTML in-app messages](https://www.braze.com/docs/user_guide/message_building_by_channel/in-app_messages/traditional/customize/html_in-app_messages/#javascript-bridge)
+
+2. [Braze Bridge] (https://www.braze.com/docs/user_guide/message_building_by_channel/in-app_messages/traditional/customize/html_in-app_messages/#javascript-bridge)
+
+Web向けでした試していないため、モバイルでどう表示されるかは、未検証のため注意ください。
 
 ## Acknowledgement
 1. Avatar image
