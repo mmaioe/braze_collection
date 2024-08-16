@@ -1,0 +1,33 @@
+<html>
+
+<body>
+
+<div style="display: flex;justify-content: flex-end;position: absolute;right: 0; bottom: 0;">
+
+<div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333; border-radius: 5px; background-color: #ffff99;">
+    <p id="avatar_comment">ライバルに負けてるよ</p>
+    <p id="avatar_close">閉じる</p>
+</div>
+
+<img src="https://braze-images.com/appboy/communication/assets/image_assets/images/66bef4574c45970063a67e54/original.png?1723790423">
+
+</div>
+<script type="text/javascript">
+
+setTimeout(function(){
+	window.top.document.body.classList.remove("ab-pause-scrolling");
+}, 500);
+
+
+window.addEventListener("ab.BridgeReady", function(){
+   document.querySelector("#avatar_close").onclick = function(){
+    brazeBridge.closeMessage();
+  };
+}, false);
+
+</script>
+
+</body>
+
+
+</html>
