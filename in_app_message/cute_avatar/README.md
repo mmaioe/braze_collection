@@ -35,8 +35,11 @@ I tried this one only for Web. So, not sure how it works for mobile app.
 
 Web向けでした試していないため、モバイルでどう表示されるかは、未検証のため注意ください。
 
+## (1) 画像ファイル"16451_color.png"ファイルを、Braze Dashboard上で作成したIAMキャンペーンに設定する
+
+## (2) in_app_message.htmlの内容を、Braze Dashboard上で作成したIAMキャンペーンの中身に設定する
+
 ## Acknowledgement
 1. Avatar image
 https://soco-st.com/16451
-
 

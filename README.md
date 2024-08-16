@@ -7,6 +7,7 @@ This repository shows the list of sample assets/information for quickly trying B
 Directory Structure
 - connected_content: contains a set of sample assets about Connected Content along with some other functionality.
 - debugging: contains information about how to debug various kinds of stuff.
+- in_app_message: contains a set of sample assets about IAM message
 
 ## Japanese
 
@@ -15,4 +16,4 @@ Directory Structure
 ディレクトリ
 - connected_content: コネクティッドコンテントに関するサンプルアセットなどが格納されています。
 - debugging: デバック方法に関しての様々な情報を記載しています。
-
+- in_app_message: IAMメッセージに関するサンプルアセットが含まれています。
