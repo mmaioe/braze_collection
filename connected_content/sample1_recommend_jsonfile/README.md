@@ -13,11 +13,11 @@ In this asset, you can try the following Braze's functionalities:
 
 You can try this asset by following the below steps:
 
-# (1) upload catalog.csv into your Braze environment
+## (1) upload catalog.csv into your Braze environment
 When uploading catalog.csv, save that data as "Recommend1".
 the liquid of (2) step is referring this csv data as "Recommend1". So, name it as "Recommend1".
 
-# (2) write some liquid like the following in the message for using Connected content.
+## (2) write some liquid like the following in the message for using Connected content.
 The recommended Information:
 
 {% connected_content
@@ -51,11 +51,11 @@ Hi, the recommended item is {{result.recommended_items[0]}}!!!!
 
 以下の手順で、試すことが可能です。
 
-# (1) catalog.csvを、お使いのBrazeの環境に取り込む
+## (1) catalog.csvを、お使いのBrazeの環境に取り込む
 Brazeの環境に取り込む際に、"Recommend1"という名前で保存ください。
 (2)のliquidでは、"Recommend1"という名前で、カタログを参照しています。
 
-# (2) メッセージの中で、以下のliquidを書く
+## (2) メッセージの中で、以下のliquidを書く
 The recommended Information:
 
 {% connected_content 
