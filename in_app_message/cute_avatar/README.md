@@ -25,6 +25,8 @@ I tried this one only for Web. So, not sure how it works for mobile app.
 
 ## (2) copy and paster the content of in_app_message.html into your IAM campaign message
 
+## (3) change the value of img's src with the path you can get in (1)
+
 ## Japanese
 
 このサンプルでは、以下のBrazeの機能を試すことができます。
@@ -38,6 +40,8 @@ Web向けでしか試していないため、モバイルでどう表示され�
 ## (1) 画像ファイル"16451_color.png"ファイルを、Braze Dashboard上で作成したIAMキャンペーンに設定する
 
 ## (2) in_app_message.htmlの内容を、Braze Dashboard上で作成したIAMキャンペーンの中身に設定する
+
+## (3) img srcのパスの中身を(1)でアップロードした画像のパスに変更ください
 
 ## Acknowledgement
 1. Avatar image
