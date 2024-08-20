@@ -33,7 +33,7 @@ I tried this one only for Web. So, not sure how it works for mobile app.
 
 2. [Braze Bridge](https://www.braze.com/docs/user_guide/message_building_by_channel/in-app_messages/traditional/customize/html_in-app_messages/#javascript-bridge)
 
-Web向けでした試していないため、モバイルでどう表示されるかは、未検証のため注意ください。
+Web向けでしか試していないため、モバイルでどう表示されるかは、未検証のため注意ください。
 
 ## (1) 画像ファイル"16451_color.png"ファイルを、Braze Dashboard上で作成したIAMキャンペーンに設定する
 
