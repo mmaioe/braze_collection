@@ -26,6 +26,10 @@ This example is setting up the following two delegates:
 Also, make sure that you enable In-app message UI delegate by the following code.
 
 ```
+...
+class AppDelegate: UIResponder, UIApplicationDelegate,BrazeInAppMessageUIDelegate
+...
+
  let inAppMessageUI = BrazeInAppMessageUI()
  inAppMessageUI.delegate = self
  braze.inAppMessagePresenter = inAppMessageUI
@@ -59,6 +63,9 @@ https://www.braze.com/docs/developer_guide/platform_integration_guides/swift/in-
 また、以下のコードにより、カスタマイズのDelegateが動作するようになるので、下記のコードが実行されていることを確認ください。
 
 ```
+...
+class AppDelegate: UIResponder, UIApplicationDelegate,BrazeInAppMessageUIDelegate
+...
  let inAppMessageUI = BrazeInAppMessageUI()
  inAppMessageUI.delegate = self
  braze.inAppMessagePresenter = inAppMessageUI
