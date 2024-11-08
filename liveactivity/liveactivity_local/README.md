@@ -5,6 +5,33 @@ So, please be careful on that.
 
 このサンプルはあくまで、ローカルで試してみた程度のサンプルになりますので、参考程度に見てください。
 
+## What do we want to do ? (実施したいこと)
+
+In this example, we want to do the following:
+
+(1) when opening app, we start LiveActivity.
+
+(2) we name that LiveActivity as breakingNewsPar10
+
+(3) call Braze API with breakingNewsPar10 to update Breaking News information and shows notification.
+
+Unlike Push notification, users are opted into live activites for an app.
+
+So, even if you do not get explicitly permission, you can show message.
+
+以下を実施するサンプルとなります。
+
+(1) アプリを開いた時に、LiveActivityを起動
+
+(2) (1)で起動したLiveActivityに、"breakingNewsPar10"という名前をつける
+
+(3) BrazeのAPIを使用して、Breaking Newsの情報を更新し、通知を出す。
+
+プッシュ通知と違い、ユーザーは、live activiesに対して、デフォルトでOpt-inしています。
+
+そのため、明示的に許可を取らなくても、通知を表示できます。
+
+
 ## English
 
 LiveActivity in Braze SDK supports two ways to enable Live Activity, REMOTE and LOCAL.
