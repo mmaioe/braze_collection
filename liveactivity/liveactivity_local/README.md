@@ -15,7 +15,7 @@ In this example, we want to do the following:
 
 (3) call Braze API with breakingNewsPar10 to update Breaking News information and shows notification.
 
-Unlike Push notification, users are opted into live activites for an app.
+Unlike Push notification, users are opted into live activites for an app by default.
 
 So, even if you do not get explicitly permission, you can show message.
 
@@ -103,6 +103,16 @@ struct BreakingNews: Widget{
 ```
 
 3. Create Model folder in the parent project
+
+So, you would get something like the following:
+
+```
+- Model
+- AppDelegate.swift
+- SceneDelegate.swift
+...
+
+```
 
 4. Create BreakingNewsAttributes.swift under Step3's folder
 Create a file, Model/BreakingNewsAttributes.swift
