@@ -1,3 +1,10 @@
+## Note (注意)
+
+This is just an example where I tried locall in my laptop.
+So, please be careful on that.
+
+このサンプルはあくまで、ローカルで試してみた程度のサンプルになりますので、参考程度に見てください。
+
 ## English
 
 LiveActivity in Braze SDK supports two ways to enable Live Activity, REMOTE and LOCAL.
