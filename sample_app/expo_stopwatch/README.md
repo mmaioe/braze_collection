@@ -1,3 +1,6 @@
+
+![image](https://raw.githubusercontent.com/mmaioe/braze_collection/refs/heads/main/sample_app/expo_stopwatch/expo_stopwatch.png)
+
 # Japanese
 
 ## Expoの初期設定
