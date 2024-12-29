@@ -59,6 +59,38 @@ plugins: [
 
 ### App.tsxの変更
 
+```
+import Braze, { ContentCard } from "@braze/react-native-sdk";
+```
+BrazeをImportすると、Braze関連の機能が使えるようになる。
+また、Importの実行だけで、Brazeの初期化が実行される。
+
+```
+Braze.changeUser("stopwatch_test_user_v2")
+```
+changeUserの実行
+
+```
+ const [topBanner, setTopBanner] = useState<ContentCard>(); // Content Cards for Braze
+```
+Brazeのコンテンツカード情報を保持するStateを定義
+
+```
+Braze.addListener(Braze.Events.CONTENT_CARDS_UPDATED, async (update) => {
+    console.log("content cards got updated")
+
+    for (let i = 0; i <update.cards.length; i++) {
+      if(update.cards[i].extras["position"] == "top"){
+        console.log(update.cards[i])
+        setTopBanner(update.cards[i] as ContentCard)
+      }
+    }
+  });
+
+  Braze.requestContentCardsRefresh();
+```
+Brazeのコンテンツカードの情報をListenし、新しい情報を取得したら、コンテンツカード用のStateを変更し、アプリのGUIにバナーを表示する。
+
 
 
 # English
@@ -69,7 +101,7 @@ plugins: [
 ```
 expo init expo_stopwatch 
 ```
-blank (TypeSciprt)を選択
+Select blank (TypeSciprt)
 
 ### Create app.config.ts
 Create app.config.ts file whose content is the same as app_json_backup.
@@ -119,3 +151,36 @@ plugins: [
 
 ### Change App.tsx
 
+```
+import Braze, { ContentCard } from "@braze/react-native-sdk";
+```
+By Importing Braze library, you can start to use Braze related functionality.
+Also, Initializing Braze SDK is done automatically.。
+
+```
+Braze.changeUser("stopwatch_test_user_v2")
+```
+Execute changeUser.
+
+```
+ const [topBanner, setTopBanner] = useState<ContentCard>(); // Content Cards for Braze
+```
+Define a state which maintain Braze Content card information.
+
+```
+Braze.addListener(Braze.Events.CONTENT_CARDS_UPDATED, async (update) => {
+    console.log("content cards got updated")
+
+    for (let i = 0; i <update.cards.length; i++) {
+      if(update.cards[i].extras["position"] == "top"){
+        console.log(update.cards[i])
+        setTopBanner(update.cards[i] as ContentCard)
+      }
+    }
+  });
+
+  Braze.requestContentCardsRefresh();
+```
+Listen for Braze content card update. 
+Once we get Braze content card update, we update the state for content card.
+Then, Top banner for mobile app will display.
