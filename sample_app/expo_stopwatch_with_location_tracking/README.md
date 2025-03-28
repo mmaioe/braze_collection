@@ -3,184 +3,86 @@
 
 # Japanese
 
-## Expoの初期設定
+このRepositoryは、https://github.com/mmaioe/braze_collection/tree/main/sample_app/expo_stopwatch のアプリに対して、位置情報を自動で収集する機能の設定を行ったサンプルアプリになります。
 
-### Expoプロジェクトの作成
-```
-expo init expo_stopwatch 
-```
-blank (TypeSciprt)を選択
-
-### app.config.tsを作成
-app_json_backupと同じ内容で作成。
-
-## braze関連の設定
-
-### braze関連のライブラリのインストール
-```
-npm install @braze/react-native-sdk
-expo install @braze/expo-plugin
-```
-
-ドキュメント：https://www.braze.com/docs/ja/developer_guide/platform_integration_guides/react_native/react_sdk_setup/#%E3%82%B9%E3%83%86%E3%83%83%E3%83%97-1braze-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%83%BC%E3%82%92%E7%B5%B1%E5%90%88%E3%81%99%E3%82%8B
-
-### braze関連の設定を、app.config.tsに追加
-
-```
-plugins: [
-    [
-      "@braze/expo-plugin",
-      {
-        androidApiKey: process.env.BRAZE_ANDROID_API_KEY,
-        iosApiKey: process.env.BRAZE_IOS_API_KEY,
-        baseUrl: process.env.BRAZE_SDK_ENDPOINT,
-        sessionTimeout: 60,
-        enableGeofence: false,
-        enableBrazeIosPush: false,
-        enableFirebaseCloudMessaging: false,
-        firebaseCloudMessagingSenderId: "YOUR-FCM-SENDER-ID",
-        androidHandlePushDeepLinksAutomatically: true,
-        enableSdkAuthentication: false,
-        logLevel: 3,
-        minimumTriggerIntervalInSeconds: 0,
-        enableAutomaticLocationCollection: false,
-        enableAutomaticGeofenceRequests: false,
-        dismissModalOnOutsideTap: true,
-        androidPushNotificationHtmlRenderingEnabled: true,
-        androidNotificationAccentColor: "#ff3344",
-        androidNotificationLargeIcon: "@drawable/custom_app_large_icon",
-        androidNotificationSmallIcon: "@drawable/custom_app_small_icon",
-      },
-    ],
-  ]
-```
+## Expoの基本的な設定
+https://github.com/mmaioe/braze_collection/tree/main/sample_app/expo_stopwatch を参考ください。
 
 ## Expoプログラム関連の記載
 
 ### App.tsxの変更
 
 ```
-import Braze, { ContentCard } from "@braze/react-native-sdk";
+import * as Location from 'expo-location';
 ```
-BrazeをImportすると、Braze関連の機能が使えるようになる。
-また、Importの実行だけで、Brazeの初期化が実行される。
+位置情報の取得の許諾を取るためのポップアップを出すために使用する機能
 
 ```
-Braze.changeUser("stopwatch_test_user_v2")
+Location.requestForegroundPermissionsAsync();
 ```
-changeUserの実行
+位置情報の取得の許諾を取るためのポップアップを表示させる
 
-```
- const [topBanner, setTopBanner] = useState<ContentCard>(); // Content Cards for Braze
-```
-Brazeのコンテンツカード情報を保持するStateを定義
+### app.config.tsの変更
 
 ```
-Braze.addListener(Braze.Events.CONTENT_CARDS_UPDATED, async (update) => {
-    console.log("content cards got updated")
-
-    for (let i = 0; i <update.cards.length; i++) {
-      if(update.cards[i].extras["position"] == "top"){
-        console.log(update.cards[i])
-        setTopBanner(update.cards[i] as ContentCard)
-      }
-    }
-  });
-
-  Braze.requestContentCardsRefresh();
+"infoPlist": {
+      "NSLocationWhenInUseUsageDescription": "位置情報の許諾をください! Please give us your permission for collecting location information !"
+}
 ```
-Brazeのコンテンツカードの情報をListenし、新しい情報を取得したら、コンテンツカード用のStateを変更し、アプリのGUIにバナーを表示する。
+位置情報の許諾を取るポップアップに入れる文言の設定。
 
+```
+...
+enableGeofence: true,
+...
+enableAutomaticLocationCollection: true,
+enableAutomaticGeofenceRequests: true,
+...
+```
+位置情報関連のフラグをtrueに設定ください。
+Geofence関連のフラグもtrueにしています。この辺りをfalseにすると、位置情報の自動収集が動かなかったため、trueにしています。
 
+上記の設定ができると、あとは、Braze SDKが自動で、位置情報を、Brazeサーバー側に送信するようになります。
 
 # English
 
-## Initialization about Expo
+This is an app which added location tracking capability to https://github.com/mmaioe/braze_collection/tree/main/sample_app/expo_stopwatch  app.
 
-### Create an Expo project, expo_stopwatch
-```
-expo init expo_stopwatch 
-```
-Select blank (TypeSciprt)
+## Basic setting about Expo
+Refer https://github.com/mmaioe/braze_collection/tree/main/sample_app/expo_stopwatch
 
-### Create app.config.ts
-Create app.config.ts file whose content is the same as app_json_backup.
-
-## Braze related settings
-
-### Install Braze related libraries
-```
-npm install @braze/react-native-sdk
-expo install @braze/expo-plugin
-```
-
-Braze's document：https://www.braze.com/docs/ja/developer_guide/platform_integration_guides/react_native/react_sdk_setup/#%E3%82%B9%E3%83%86%E3%83%83%E3%83%97-1braze-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%83%BC%E3%82%92%E7%B5%B1%E5%90%88%E3%81%99%E3%82%8B
-
-### Add Braze related settings into app.config.ts
-
-```
-plugins: [
-    [
-      "@braze/expo-plugin",
-      {
-        androidApiKey: process.env.BRAZE_ANDROID_API_KEY,
-        iosApiKey: process.env.BRAZE_IOS_API_KEY,
-        baseUrl: process.env.BRAZE_SDK_ENDPOINT,
-        sessionTimeout: 60,
-        enableGeofence: false,
-        enableBrazeIosPush: false,
-        enableFirebaseCloudMessaging: false,
-        firebaseCloudMessagingSenderId: "YOUR-FCM-SENDER-ID",
-        androidHandlePushDeepLinksAutomatically: true,
-        enableSdkAuthentication: false,
-        logLevel: 3,
-        minimumTriggerIntervalInSeconds: 0,
-        enableAutomaticLocationCollection: false,
-        enableAutomaticGeofenceRequests: false,
-        dismissModalOnOutsideTap: true,
-        androidPushNotificationHtmlRenderingEnabled: true,
-        androidNotificationAccentColor: "#ff3344",
-        androidNotificationLargeIcon: "@drawable/custom_app_large_icon",
-        androidNotificationSmallIcon: "@drawable/custom_app_small_icon",
-      },
-    ],
-  ]
-```
-
-## Develop Expo related program
+## Expo related programs
 
 ### Change App.tsx
 
 ```
-import Braze, { ContentCard } from "@braze/react-native-sdk";
+import * as Location from 'expo-location';
 ```
-By Importing Braze library, you can start to use Braze related functionality.
-Also, Initializing Braze SDK is done automatically.。
+Import expo-location service in order to use location tracking related functionality.
 
 ```
-Braze.changeUser("stopwatch_test_user_v2")
+Location.requestForegroundPermissionsAsync();
 ```
-Execute changeUser.
+Shows some popup message to get location tracking permission
+
+### Change app.config.ts
 
 ```
- const [topBanner, setTopBanner] = useState<ContentCard>(); // Content Cards for Braze
+"infoPlist": {
+      "NSLocationWhenInUseUsageDescription": "位置情報の許諾をください! Please give us your permission for collecting location information !"
+}
 ```
-Define a state which maintain Braze Content card information.
+By adding the above information, we can change the comment in the shown popup message for getting location tracking permission.
 
 ```
-Braze.addListener(Braze.Events.CONTENT_CARDS_UPDATED, async (update) => {
-    console.log("content cards got updated")
-
-    for (let i = 0; i <update.cards.length; i++) {
-      if(update.cards[i].extras["position"] == "top"){
-        console.log(update.cards[i])
-        setTopBanner(update.cards[i] as ContentCard)
-      }
-    }
-  });
-
-  Braze.requestContentCardsRefresh();
+...
+enableGeofence: true,
+...
+enableAutomaticLocationCollection: true,
+enableAutomaticGeofenceRequests: true,
+...
 ```
-Listen for Braze content card update. 
-Once we get Braze content card update, we update the state for content card.
-Then, Top banner for mobile app will display.
+Set true for location tracking related flags in app.config.ts.
+Actually, geofence related flags are fine not to be true. But, if you do not set these flags as true, automatic location tracking did not work in this sample app.
+
+Now, Braze SDK automatically collect location data.
