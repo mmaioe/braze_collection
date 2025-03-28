@@ -20,6 +20,8 @@ Location.requestForegroundPermissionsAsync();
 ```
 位置情報の取得の許諾を取るためのポップアップを表示させる
 
+Refer: https://docs.expo.dev/versions/latest/sdk/location/
+
 ### app.config.tsの変更
 
 ```
@@ -61,7 +63,9 @@ Import expo-location service in order to use location tracking related functiona
 ```
 Location.requestForegroundPermissionsAsync();
 ```
-Shows some popup message to get location tracking permission
+Shows some popup message to get location tracking permission.
+
+Refer: https://docs.expo.dev/versions/latest/sdk/location/
 
 ### Change app.config.ts
 
