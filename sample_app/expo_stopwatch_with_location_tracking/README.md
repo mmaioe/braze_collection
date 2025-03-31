@@ -1,4 +1,8 @@
 
+I tried this app only for iOS platform. I have not tried this one for Android. So, be careful about that.
+
+iOSでしか動作確認しておりませんので、ご注意ください。
+
 # Japanese
 
 このRepositoryは、https://github.com/mmaioe/braze_collection/tree/main/sample_app/expo_stopwatch のアプリに対して、位置情報を自動で収集する機能の設定を行ったサンプルアプリになります。
